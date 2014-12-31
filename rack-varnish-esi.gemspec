@@ -1,16 +1,19 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rack/varnish/esi/version'
+require 'rack/varnish_esi_version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rack-varnish-esi"
-  spec.version       = Rack::Varnish::Esi::VERSION
+  spec.version       = Rack::VarnishEsi::VERSION
   spec.authors       = ["Thomas Marek"]
   spec.email         = ["thomas_marek@gmx.net"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Varnish ESI middleware implementation for Rack.}
+  spec.description   = %q{<<-EOF
+rack-varnish-esi is a Varnish ESI middleware implementation for Rack which is as close as possible to Varnish's own ESI implementation.
+Note: This gem should only be used in development.
+EOF}
+  spec.homepage      = "https://github.com/tmak/rack-varnish-esi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,7 +21,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_dependency "rack"
+
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
 end
