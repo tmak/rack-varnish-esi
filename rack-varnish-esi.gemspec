@@ -24,4 +24,5 @@ Note: This gem should only be used in development.}
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
+  spec.add_development_dependency "webmock"
 end

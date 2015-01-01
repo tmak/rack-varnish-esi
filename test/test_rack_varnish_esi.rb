@@ -10,6 +10,8 @@ class TestRackVarnishEsi < Minitest::Test
   end
 
   def test_that_it_has_the_same_behavior_as_varnish
+    WebMock.allow_net_connect!
+
     http_server_thread = start_http_server_with_varnish_esi_middleware(
       :locations => {/.*/ => 'http://localhost:8080'},
     )
