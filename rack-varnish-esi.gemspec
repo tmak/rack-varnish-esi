@@ -9,10 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Thomas Marek"]
   spec.email         = ["thomas_marek@gmx.net"]
   spec.summary       = %q{Varnish ESI middleware implementation for Rack.}
-  spec.description   = %q{<<-EOF
-rack-varnish-esi is a Varnish ESI middleware implementation for Rack which is as close as possible to Varnish's own ESI implementation.
-Note: This gem should only be used in development.
-EOF}
+  spec.description   = %q{rack-varnish-esi is a Varnish ESI middleware implementation for Rack which is as close as possible to Varnish's own ESI implementation.
+Note: This gem should only be used in development.}
   spec.homepage      = "https://github.com/tmak/rack-varnish-esi"
   spec.license       = "MIT"
 
