@@ -53,7 +53,7 @@ options = {
 
 ## Test environment
 
-    $ rake test
+    $ bundle exec rake test
 
 ### Update varnish fixtures
 
@@ -63,7 +63,7 @@ Start varnish in one terminal:
 
 Start static server in another terminal:
 
-    $ rackup test/static_server/config.ru
+    $ bundle exec rackup test/static_server/config.ru
 
 And then update varnish fixtures:
 
