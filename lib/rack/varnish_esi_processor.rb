@@ -29,7 +29,7 @@ module Rack
     end
 
     def process_include(part)
-      part.gsub(/<esi:include src="([^"]+)"(?: +alt="([^"]+)")?\/?>/) do
+      part.gsub(/<esi:include src="([^"]+)"(?: +alt="([^"]+)")? *\/?>/) do
         fetch($1).force_encoding(part.encoding)
       end
     end
