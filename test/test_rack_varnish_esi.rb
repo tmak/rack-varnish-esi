@@ -23,6 +23,18 @@ class TestRackVarnishEsi < Minitest::Test
     end
   end
 
+  def test_that_it_accepts_content_type_parameters
+    body_mock = Minitest::Mock.new
+    app_mock = Minitest::Mock.new
+    app_mock.expect(:call, [200, {"Content-Type" => "text/html; charset=utf-8"}, body_mock], ["test_env" => true])
+    body_mock.expect(:close, nil)
+    body_mock.expect(:each, nil)
+    middleware = Rack::VarnishEsi.new(app_mock)
+    middleware.call({"test_env" => true})
+    app_mock.verify
+    body_mock.verify
+  end
+
 protected
 
   def start_http_server_with_varnish_esi_middleware(varnish_esi_options)
